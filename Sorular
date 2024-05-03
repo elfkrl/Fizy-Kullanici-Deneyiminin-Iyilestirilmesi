@@ -1,0 +1,27 @@
+import pandas as pd
+
+a1= input("Hangi dilde müzik dinlemekten hoşlanırsınız?")
+a2= input("Hangi tür müzik dinlemekten hoşlanırsınız?")    #kullanıcı 1
+a3= input("Hangi yıllara ait müzik dinlemekten hoşlanırsınız?")
+
+b1= input("Hangi dilde müzik dinlemekten hoşlanırsınız?")
+b2= input("Hangi tür müzik dinlemekten hoşlanırsınız?")    #kullanıcı 2
+b3= input("Hangi yıllara ait müzik dinlemekten hoşlanırsınız?")
+
+c1= input("Hangi dilde müzik dinlemekten hoşlanırsınız?")
+c2= input("Hangi tür müzik dinlemekten hoşlanırsınız?")    #kullanıcı 3
+c3= input("Hangi yıllara ait müzik dinlemekten hoşlanırsınız?")
+#a, b ve c kullanıcı örnekleridir. örnekler çoğaltılabilir, ben prototip olduğu için üç tane kullanacağım.
+
+
+columns = ['dil', 'tür', 'yıl']
+iris_data = pd.DataFrame(columns=columns)
+
+
+iris_data.loc['kullanıcı1'] = [a1, a2, a3]
+iris_data.loc['kullanıcı2'] = [b1, b2, b3] 
+iris_data.loc['kullanıcı3'] = [c1, c2, c3] 
+
+iris_data.to_csv('iris_dataset.csv', index=False)
+
+print(iris_data)

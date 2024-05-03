@@ -1,0 +1,26 @@
+import pandas as pd
+
+turkce_sarkı= "Gibi Gibi"
+ing_sarkı= "Dear Rosemary"
+alm_sarkı= "Acht So Gern"
+
+pop_sarkı= "One Of The Girls"
+rock_sarkı= "Sweet Child O' Mine"
+akustik_sarkı= "Bul Beni"
+
+#farklı dil ve türlerde yapay zekanın önerebilmesi için şarkılar ekledim. bütün şarkılara türkçe, ingilizce gibi etiketler eklenebilir.
+
+columns = ['Şarkılar:']
+iris_data = pd.DataFrame(columns=columns)
+
+
+iris_data.loc['Türkçe Şarkı'] = [turkce_sarkı]
+iris_data.loc['İngilizce Şarkı'] = [ing_sarkı]
+iris_data.loc['Almanca Şarkı'] = [alm_sarkı]
+iris_data.loc['Pop Şarkı'] = [pop_sarkı]
+iris_data.loc['Rock Şarkı'] = [rock_sarkı]
+iris_data.loc['Akustik Şarkı'] = [akustik_sarkı]
+
+iris_data.to_csv('iris_dataset2.csv', index=False)
+
+print(iris_data)
